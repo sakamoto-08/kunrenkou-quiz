@@ -1,0 +1,138 @@
+﻿<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="生成AI・プロンプトに関する4択クイズです。"
+    />
+    <title>生成AI・プロンプト 4択クイズ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">学習クイズ</p>
+        <h1 id="quiz-title">生成AI・プロンプト</h1>
+        <p class="subtitle" id="quiz-description">
+          AIの仕組みと安全な使い方をチェック
+        </p>
+      </header>
+
+      <nav class="quiz-selector" aria-label="クイズを選択">
+        <button
+          class="quiz-select-button is-active"
+          type="button"
+          data-quiz="generator"
+          aria-pressed="true"
+        >
+          ① 生成AI・プロンプト
+        </button>
+        <button
+          class="quiz-select-button"
+          type="button"
+          data-quiz="photoshop"
+          aria-pressed="false"
+        >
+          ② Photoshop・Illustrator
+        </button>
+        <button
+          class="quiz-select-button"
+          type="button"
+          data-quiz="html"
+          aria-pressed="false"
+        >
+          ③ HTML基礎・セマンティックHTML
+        </button>
+        <button
+          class="quiz-select-button"
+          type="button"
+          data-quiz="snsMarketing"
+          aria-pressed="false"
+        >
+          ④ SNS・Webマーケティング
+        </button>
+      </nav>
+
+      <section class="quiz-card" id="quiz-container" aria-labelledby="question">
+        <div class="quiz-progress" aria-label="問題の進捗">
+          <span id="question-number">問題 1 / 23</span>
+          <span class="progress-track" aria-hidden="true">
+            <span class="progress-fill" id="progress-fill"></span>
+          </span>
+        </div>
+
+        <div id="question-view">
+          <div class="question-heading">
+            <p class="question-label">問題</p>
+            <h2 id="question">問題を表示中です…</h2>
+          </div>
+
+          <div
+            class="choices"
+            id="choices"
+            role="group"
+            aria-label="選択肢"
+          ></div>
+
+          <div
+            class="feedback"
+            id="feedback"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <section
+            class="explanation"
+            id="explanation"
+            aria-labelledby="explanation-title"
+            hidden
+          >
+            <h3 id="explanation-title">解説</h3>
+            <p id="explanation-text"></p>
+          </section>
+
+          <button
+            class="primary-button next-button"
+            id="next-button"
+            type="button"
+            hidden
+          >
+            次の問題
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <section
+          class="result"
+          id="result"
+          aria-labelledby="result-title"
+          hidden
+        >
+          <div class="result-icon" aria-hidden="true">✓</div>
+          <p class="result-label">クイズ終了！</p>
+          <h2 id="result-title">お疲れさまでした</h2>
+          <p class="score" id="score">23問中 0問正解</p>
+          <p class="accuracy" id="accuracy">正答率：0%</p>
+          <p class="result-message" id="result-message"></p>
+          <button
+            class="primary-button restart-button"
+            id="restart-button"
+            type="button"
+          >
+            もう一度挑戦する
+            <span aria-hidden="true">↻</span>
+          </button>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <p>正解を選んで、AIをより深く理解しよう。</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
